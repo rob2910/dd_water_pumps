@@ -52,10 +52,10 @@ std = np.std([tree.feature_importances_ for tree in forest.estimators_],
              axis=0)
 indices = np.argsort(importances)[::-1]
 
-# plt.figure()
-# plt.title("Feature importances")
-# plt.bar(range(num_features), importances[indices],
-#        color="r", yerr=std[indices], align="center")
-# plt.xticks(range(num_features), indices)
-# plt.xlim([-1, num_features])
-# plt.show()
+plt.figure()
+plt.title("Feature importances")
+plt.bar(range(num_features), importances[indices],
+       color="r", yerr=std[indices], align="center")
+plt.xticks(range(num_features), indices)
+plt.xlim([-1, num_features])
+plt.show()

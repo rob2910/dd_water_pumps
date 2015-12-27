@@ -1,10 +1,26 @@
 # dd_water_pumps
-Project for my submission of the DataDriven.org Pump It Up competition
+Project for my submission of the DataDriven.org Pump It Up competition - http://www.drivendata.org/competitions/7/
 
-# Methods
+## Methods
 
-## Label Data ##
+### Random Forest
 
-Rather than have the modelling algorithms parse through strings every single time it's necessary to convert labels into intgers for faster processing.
+I made use of scikit-learn's RandomForestClassifier model.
 
-## Currnet 
+## Requirements
+
+Please sign up for the competition and download necessary .csv data files from http://www.drivendata.org/competitions/7/data/
+
+## Documentation
+
+### predict.py
+
+### config.py
+
+### data_helper.py
+
+## pre_process.py 
+
+## Current Score
+
+77.9
