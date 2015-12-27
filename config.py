@@ -5,13 +5,14 @@ import pandas as pd
 TEST_SET_VALUES = "./data/test_set_values.csv"
 TRAINING_SET_LABELS = "./data/training_set_labels.csv"
 TRAINING_SET_VALUES = "./data/training_set_values.csv"
+OUTPUT_PREDICTIONS = "./data/output.csv"
 
 LABEL_DTYPE={ 'id' : np.float64, 'status_group' : str }
 
 VALUE_DTYPE={
 	"id" : np.int32,
 	"amount_tsh" : np.float64,
-	"date_recorded" : pd.datetime,
+	"date_recorded" : np.uint32,
 	"funder" : str,
 	"gps_height" : np.uint32,
 	"installer" : str,
