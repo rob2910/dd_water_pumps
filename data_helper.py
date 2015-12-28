@@ -23,6 +23,7 @@ def readTrainingLabels():
 	Load test or training set values into data structure """
 def readData(file_name):
 	data = pd.read_csv(file_name, sep=',',dtype=config.VALUE_DTYPE,index_col=0, parse_dates=[2],encoding='utf8',converters={'date_recorded' : dataConv})
+	data = pre_process.fixUnknownStrings(data)
 	data = setCatgories(data,["funder","installer","wpt_name","basin","subvillage","region","lga","ward","recorded_by","scheme_management","scheme_name","extraction_type","extraction_type_group","extraction_type_class","management","management_group","payment","payment_type","water_quality","quality_group","quantity","quantity_group","source","source_type","source_class","waterpoint_type","waterpoint_type_group"])
 	data = pre_process.tidyData(data)
 	return data

@@ -26,27 +26,11 @@ You will also need the following python modules which can be installed via pip.
 
 ## Documentation
 
-### predict.py
-
-This is the main invocation script for the predictor.
-
 Usage : 
 ```
 python predict.py
 ```
 
-### config.py
-
-Holds constants and configuration data.
-
-### data_helper.py
-
-Helper module for reading and processing data.
-
-### pre_process.py #
-
-Helper module for pre-processing data.
-
-## Current Score
+## Current Best Score
 
 77.9

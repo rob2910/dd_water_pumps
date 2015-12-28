@@ -19,11 +19,11 @@ X_train, X_cross_validate, y_train, y_cross_validate = train_test_split(train_da
 
 iris = load_iris()
 
-# features = [5, 32, 6, 33, 7, 10, 1, 3, 15]
+# features = [6, 5, 32, 33, 7, 10, 1, 3, 15]
 num_features = X_train.shape[1]
 
 #create the random forest model
-forest = RandomForestClassifier(n_estimators = 10)
+forest = RandomForestClassifier(n_estimators = 100, n_jobs=10)
 
 #fit the RandomForestClassififer on the training data
 forest.fit(X_train, y_train)
@@ -42,8 +42,6 @@ test_data = data_helper.readData(config.TEST_SET_VALUES)
 x = forest.predict(test_data)
 test_data['status_group'] = 0
 test_data.status_group = x
-
-
 #save data to csv
 data_helper.saveData(test_data,config.OUTPUT_PREDICTIONS,['status_group'])
 
@@ -52,10 +50,12 @@ std = np.std([tree.feature_importances_ for tree in forest.estimators_],
              axis=0)
 indices = np.argsort(importances)[::-1]
 
+fig_labels = list(X_train.keys())
+
 plt.figure()
 plt.title("Feature importances")
 plt.bar(range(num_features), importances[indices],
        color="r", yerr=std[indices], align="center")
-plt.xticks(range(num_features), indices)
+plt.xticks(range(num_features), indices) #fig_labels, rotation='vertical')
 plt.xlim([-1, num_features])
 plt.show()
